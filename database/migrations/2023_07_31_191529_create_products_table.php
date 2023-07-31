@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use App\Models;
+
 return new class extends Migration
 {
     /**
@@ -13,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 2000);
+            $table->string('slug', 2000);
+            $table->string('image', 2000)->nullable();
+            $table->string('image_meme')->nullable();
+            $table->integer('image_size')->nullable();
+            $table->description('image_size')->nullable();
+            $table->foreignIdFor(User::class, 'created_by')->nullable();
+            $table->foreignIdFor(User::class, 'updated_by')->nullable();
+            $table->softDeletes();
+            $table->foreignIdFor(User::class, 'deleted_by')->nullable();
             $table->timestamps();
         });
     }
