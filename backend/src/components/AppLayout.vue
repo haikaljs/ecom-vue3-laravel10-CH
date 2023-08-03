@@ -1,11 +1,13 @@
 <template>
-    <div class="flex min-h-full">
+    <div class="flex min-h-full bg-gray-100">
         <!-- Sidebar -->
         <Sidebar />
         <div class="flex-1">
-            <header class="h-8 shadow bg-white">Header</header>
-            <main>
-                <router-view></router-view>
+            <TopHeader />
+            <main class="p-6">
+                <div class="p-4 rounded bg-white">
+                    <router-view></router-view>
+                </div>
             </main>
         </div>
     </div>
@@ -13,4 +15,5 @@
 
 <script setup>
 import Sidebar from "./Sidebar.vue";
+import TopHeader from "./TopHeader.vue";
 </script>
