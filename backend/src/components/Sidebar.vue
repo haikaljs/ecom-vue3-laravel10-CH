@@ -1,5 +1,5 @@
 <template>
-    <div class="w-[200px] bg-indigo-700 py-4 px-2 text-white">
+    <div class="w-[200px] bg-indigo-700 py-4 px-2 text-white transition-all">
         <router-link
             :to="{ name: 'app.dashboard' }"
             class="flex items-center py-2 px-2 rounded hover:bg-black/30 transition-colors mb-2"
@@ -9,7 +9,7 @@
         </router-link>
 
         <router-link
-            :to="{ name: 'app.dashboard' }"
+            :to="{ name: 'app.products' }"
             class="flex items-center py-2 px-2 rounded hover:bg-black/30 transition-colors mb-2"
         >
             <span class="mr-2"><ClipboardIcon class="w-5" /></span>
