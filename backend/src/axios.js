@@ -21,7 +21,7 @@ axiosClient.interceptors.response.use(
             router.push({ name: "login" });
         }
 
-        throw error;
+        console.error(error);
     }
 );
 

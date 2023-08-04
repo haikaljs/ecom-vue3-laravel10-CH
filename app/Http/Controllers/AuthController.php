@@ -22,7 +22,7 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
-        if(!user->is_admin){
+        if(!$user->is_admin){
             Auth::logout();
 
             return response([
@@ -31,7 +31,7 @@ class AuthController extends Controller
         }
         $token = $user->createToken('main')->plainTextToken;
 
-        return respons([
+        return response([
             'user' => $user,
             'token' => $token
         ]);
